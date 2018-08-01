@@ -1,0 +1,1 @@
+LNMP中mysql的安装步骤和LAMP一样
