@@ -346,7 +346,7 @@ done
 	}
 	其中fastcgi_pass用来指定php-fpm的地址，如果php-fpm监听的是一个tcp:port的地址(比如127.0.0.1:9000),那么也需要在这里改成fastcgi_pass 127.0.0.1:9000。这个地址一定要和php-fpm服务监听的地址匹配，否则会报502错误。
 	还有一个地方需要注意，fastcgi_param SCRIPT_FILENAME后面跟的路径为该站点的根目录，和前面定义的root那个路径保持一致。如果这里配置不对，访问PHP页面会出现404。
-9、Nginx代理
+9、Nginx代理(80端口只可以代理服务器的其他端口，如果需要代理其他服务器，需要修改监听端口，比如改为listen 81)
 	如果没有公网IP的服务器需要提供web服务，就可以通过代理来实现。
 	如果nginx后面有多台web服务器，如果同时代理，那nginx在这里就起到一个负载均衡的作用，这个功能在生产环境中用得也比较多。nginx代理配置：
 	#	cd /usr/local/nginx/conf/vhost
