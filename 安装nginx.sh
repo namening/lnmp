@@ -390,8 +390,11 @@ server
 }
 	和简单的代理不同，负载均衡多了一个upstream，在这里定义后端的web server，可以是一个，也可以是多个。其中ip_hash为负载均衡的算法，它表示根据ip地址把请求分到不同的服务器上。
 10、nginx配置ssl
-	#	cd /usr/local/nginx/conf
-	#
+	先前的nginx编译时，并没有额外配置支持SSL的参数，要解决该问题只能重新编译一遍Nginx。
+	# cd /usr/local/src/nginx-1.10.3/
+	# ./configure --prefix=/usr/local/nginx --with-http_ssl_module
+	# make
+	# make install
 
 
 
